@@ -1,3 +1,4 @@
+/* these comments do! */
 .hero {
   font-family: "Roboto", Serif;
   text-align: center;
@@ -5,9 +6,9 @@
   background-size: cover;
   padding-bottom: 50px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  flex-direction: column; }
   .hero h2 {
     margin-top: 100px;
     margin-bottom: 50px;
@@ -17,7 +18,6 @@
     color: white; }
   .hero.bridge {
     background-image: url("../img/bridge/full-width.jpg");
-    /*didn't know you could use the ../ in a url ref like this!*/
     width: 100%; }
 
 #intro h1, #intro h5 {
@@ -48,7 +48,6 @@
 
 .left-col {
   color: #00CFFF;
-  /*they changed up the color in the latest... #00E2AC*/
   padding: 20px;
   text-align: right;
   text-transform: uppercase; }
@@ -67,8 +66,7 @@
     line-height: 30px; }
 
 #gallery {
-  background-color: #EEFDF9;
-  /*i just had "background" before. not sure it makes a diff*/ }
+  background-color: #EEFDF9; }
   #gallery .container {
     padding: 0;
     margin: 0; }
@@ -117,14 +115,13 @@
       font-size: 16px;
       color: black;
       line-height: 40px; }
-
-#copyright {
-  margin-left: auto;
-  color: #00E2AC;
-  text-align: right; }
-  #copyright span {
-    display: flex;
-    justify-content: flex-end; }
+  #footer #copyright {
+    margin-left: auto;
+    color: #00E2AC;
+    text-align: right; }
+    #footer #copyright span {
+      display: flex;
+      justify-content: flex-end; }
 
 @media only screen and (max-width: 480px) {
   #intro {

@@ -1,10 +1,12 @@
 $shadow: rgba(0, 0, 0, 0.25);
 $button: black;
-$site-teal: #00CFFF;
+$site-teal: #00CFFF; //they changed up the color in the latest... #00E2AC
 $white: white;
 $gallery-color: #EEFDF9;
 $copyright: #00E2AC;
 
+// these coments don't get carried to css
+/* these comments do! */
 .hero {
   font-family: "Roboto", Serif;
   text-align: center;
@@ -12,9 +14,9 @@ $copyright: #00E2AC;
   background-size: cover;
   padding-bottom: 50px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   h2{
     margin-top: 100px;
     margin-bottom: 50px;
@@ -25,7 +27,7 @@ $copyright: #00E2AC;
     color: $white;
   }
   &.bridge{ // required prefix &
-    background-image: url("../img/bridge/full-width.jpg"); /*didn't know you could use the ../ in a url ref like this!*/
+    background-image: url("../img/bridge/full-width.jpg"); //didn't know you could use the ../ in a url ref like this!
     width: 100%;
   }
 }
@@ -66,7 +68,7 @@ $copyright: #00E2AC;
 }
 
 .left-col{ // they didn't nest this. Not sure why not.
-  color: $site-teal;/*they changed up the color in the latest... #00E2AC*/
+  color: $site-teal;
   padding: 20px;
   text-align: right;
   text-transform: uppercase;
@@ -89,7 +91,7 @@ $copyright: #00E2AC;
 }
 
 #gallery{
-  background-color: $gallery-color; /*i just had "background" before. not sure it makes a diff*/
+  background-color: $gallery-color; //i just had "background" before. not sure it makes a diff
   .container{
     padding: 0;
     margin: 0;
@@ -150,15 +152,14 @@ $copyright: #00E2AC;
       line-height: 40px;
     }
   }
-}
-
-#copyright { //I don't actually see this in the site.
-  margin-left: auto;
-  color: $copyright;
-  text-align: right;
-  span {
-    display: flex;
-    justify-content: flex-end;
+  #copyright { //It's running outside of the container, but I don't know why.
+    margin-left: auto;
+    color: $copyright;
+    text-align: right;
+    span {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 }
 
