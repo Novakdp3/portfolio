@@ -21,26 +21,25 @@ $copyright: #00E2AC;
     font-size: 40px;
     line-height: 40px;
   }
-}
-
-.landscape{ //color didn't apply when nested under hero
+  &.landscape{ // required prefix &
     color: $white;
-}
-
-.bridge{ //photo didn't show when nested under hero
-    background-image: url("../img/bridge/full-width.jpg");
-  /*didn't know you could use the ../ in a url ref like this!*/
+  }
+  &.bridge{ // required prefix &
+    background-image: url("../img/bridge/full-width.jpg"); /*didn't know you could use the ../ in a url ref like this!*/
     width: 100%;
+  }
 }
 
 #intro {
-  h1{
+  h1, h5{
     text-shadow: 0px 5px 5px $shadow;
+    // combine to clarify and avoid repetition
+  }
+  h1{
     font-size: 72px;
     line-height: 55px;
   }
   h5 {
-    text-shadow: 0px 5px 5px $shadow;
     margin-bottom: 20px;
     font-size: 24px;
     font-weight: 700;
@@ -63,27 +62,29 @@ $copyright: #00E2AC;
 }
 
 #about{
-  min-height: 0;/*is this right?! confirmed on mentor css*/
-  .left-col{
-    color: $site-teal;/*they changed up the color in the latest... #00E2AC*/
-    padding: 20px;
-    text-align: right;
-    text-transform: uppercase;
-    h2{
-      margin-top: 0px;
-      margin-bottom: 0px;
-      font-size: 60px;
-      font-weight: 700;
-      line-height: 55px;
-    }
+  min-height: 0;
+}
+
+.left-col{ // they didn't nest this. Not sure why not.
+  color: $site-teal;/*they changed up the color in the latest... #00E2AC*/
+  padding: 20px;
+  text-align: right;
+  text-transform: uppercase;
+  h2{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 55px;
   }
-  .right-col{
-    text-align: left; /*instructions said right, mentor css said left. Left makes more sense*/
-    padding: 20px;
-    h5{
-      font-size:24px;
-      line-height: 30px;
-    }
+}
+
+.right-col{
+  text-align: left;
+  padding: 20px;
+  h5{
+    font-size:24px;
+    line-height: 30px;
   }
 }
 
@@ -91,9 +92,9 @@ $copyright: #00E2AC;
   background-color: $gallery-color; /*i just had "background" before. not sure it makes a diff*/
   .container{
     padding: 0;
-    margin: 0; /*either missed this, or it wasn't in directions*/
+    margin: 0;
   }
-  .col-md-4{
+  .col-md-4{ //they didn't nest this. Not sure why not.
     overflow: hidden;
     padding-top: 0 5px 10px 5px;
     img{
@@ -165,10 +166,15 @@ $copyright: #00E2AC;
   #intro{
     min-height: 640px;
   }
-  #about .left-col h2{
-    font-size: 42px;
-    line-height: 40px;
+
+  .left-col {
+    text-align: left;
+    & h2{
+      font-size: 42px;
+      line-height: 40px;
+    }
   }
+
   #footer{
     margin-left: 20px;
     margin-right: 20px;
