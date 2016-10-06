@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!-- Latest compiled and minified JavaScript -->
+  <link rel="stylesheet" type="text/css" href="styles/main.css"/>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,700"/>
+  <!-- mentor example skips the first script src below "maxcdn" -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link type="text/css" rel="stylesheet" href="styles/main.css"/>
-  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,700"/>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script src="scripts/app.js"></script>
   <title>Portfolio - Novakdp3</title>
 </head>
 <body>
+  <!-- sidebar -->
+  <div class="sidebar-wrapper">
+    <div id="close-btn"><img src="img/icons/x.svg"/></div>
+    <h2>Spike</h2>
+    <h2>Speigel</h2>
+    <div class="sidebar-links">
+      <a href="#">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
   <!-- intro -->
   <div id="intro" class="container-fluid hero landscape">
+    <div id="hamburger"><img src="img/icons/menu.svg"/></div>
     <h1>Spike Speigel</h1>
     <h5>Freelance Photographer</h5>
     <a href="#gallery"><button type="button" class="cta">See More</button></a>
@@ -31,7 +44,7 @@
   <!-- gallery -->
   <div id="gallery" class="container-fluid hero"><!--they did a gallery class rather than id. is that impacting any refs?-->
     <div><h2>Gallery</h2></div>
-    <div class="container">
+    <div class="container"><!-- mentor example closes this div here. I think it's a mistake -->
       <!-- row 1 -->
       <div class="row">
         <div class="col-md-4"><img src="img/gallery/gallery-01.jpg"/></div>
@@ -78,7 +91,7 @@
     <div class="footer-item"><a href="#intro">About</a></div>
     <div class="footer-item"><a href="#gallery">Gallery</a></div>
     <div class="footer-item"><a href="#contact">Contact</a></div>
-    <div id="copyright"><span>&copy; Spike Spiegel</span></div>  
+    <div id="copyright"><span>&copy; Spike Spiegel</span></div>
   </div>
 
 <!-- closing -->
