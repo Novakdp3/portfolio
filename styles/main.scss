@@ -1,9 +1,8 @@
 $shadow: rgba(0, 0, 0, 0.25);
-$button: black;
-$site-teal: #00CFFF; //they changed up the color in the latest... #00E2AC
-$white: white;
-$gallery-color: #EEFDF9;
-$copyright: #00E2AC;
+$light-blue: #00CFFF;
+$light-green: #00E2AC;
+$green-white: #EEFDF9;
+$dark-grey: #999999;
 
 // these coments don't get carried to css
 /* these comments do! */
@@ -24,7 +23,7 @@ $copyright: #00E2AC;
     line-height: 40px;
   }
   &.landscape{ // required prefix &
-    color: $white;
+    color: white;
   }
   &.bridge{ // required prefix &
     background-image: url("../img/bridge/full-width.jpg"); //didn't know you could use the ../ in a url ref like this!
@@ -32,10 +31,84 @@ $copyright: #00E2AC;
   }
 }
 
+.sidebar-wrapper {
+  color: white;
+  font-family: "Roboto", Serif;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  z-index: 2;
+  position: fixed;
+  width: 0px;
+  height: 100%;
+  background: #000; //I had background-color: black
+  transition: all 0.5s ease;
+  h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin: 4px;
+    padding: 0px;
+  }
+  a {
+    color: white;
+    font-size: 24px;
+    margin-left: 10px;
+  }
+  &.open{ //not currently in use. Guessed proper use of !important
+    width: 320px !important;
+  }
+}
+
+.sidebar-links { //if this was in the instructions, then I missed it.
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#close-btn {
+  margin-left: 30px;
+  margin-top: 10px;
+  align-self: flex-start;
+  color: white;
+  cursor: pointer; //I had this in &:hover
+  &:hover {
+    opacity: .5;
+  }
+  img {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+#hamburger { //sass not nested in intro. mentors didn't nest it either
+  display: flex;
+  cursor: pointer; //don't remember this in directions
+  position: fixed;
+  height: 34px;
+  width: 40px;
+  left: 30px;
+  top: 20px;
+  z-index: 1;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  &:hover {
+    background-color: $light-blue;
+  }
+  img {
+    height: 30px;
+    width: 30px;
+  }
+}
+
 #intro {
-  h1, h5{
+  h1, h5{ // combine to clarify and avoid repetition
     text-shadow: 0px 5px 5px $shadow;
-    // combine to clarify and avoid repetition
   }
   h1{
     font-size: 72px;
@@ -49,17 +122,17 @@ $copyright: #00E2AC;
 }
 
 .cta{ // didn't nest under intro since used in contact
-  background: $button;
-  color: $white;
+  background: black;
+  color: white;
   padding: 0px;
   width: 180px;
   font-size: 18px;
-  height: 50px;
+  line-height: 50px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   &:hover{
-    background: $site-teal;
+    background: $light-blue;
   }
 }
 
@@ -68,13 +141,13 @@ $copyright: #00E2AC;
 }
 
 .left-col{ // they didn't nest this. Not sure why not.
-  color: $site-teal;
+  color: $light-green;
   padding: 20px;
   text-align: right;
   text-transform: uppercase;
   h2{
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
     font-size: 60px;
     font-weight: 700;
     line-height: 55px;
@@ -91,25 +164,26 @@ $copyright: #00E2AC;
 }
 
 #gallery{
-  background-color: $gallery-color; //i just had "background" before. not sure it makes a diff
-  .container{
+  background-color: $green-white; //i just had "background" before. not sure it makes a diff
+  .container {
     padding: 0;
     margin: 0;
   }
-  .col-md-4{ //they didn't nest this. Not sure why not.
-    overflow: hidden;
-    padding-top: 0 5px 10px 5px;
-    img{
-      height: 100%;
-      max-width: 390px;
-      max-height: 280px;
-    }
+}
+
+.col-md-4{ //they didn't nest this. Did that make a difference on the photo border?
+  overflow: hidden;
+  padding-top: 0 5px 10px 5px;
+  img{
+    height: 100%;
+    max-width: 390px;
+    max-height: 280px;
   }
 }
 
 #contact{
   text-align: center;
-  p{
+  p {
     text-align: center;
     font-size: 24px;
     max-width: 740px;
@@ -148,20 +222,22 @@ $copyright: #00E2AC;
       margin-left: 5px;
       padding: 0px;
       font-size: 16px;
-      color: $button;
+      color: black;
       line-height: 40px;
     }
   }
-  #copyright { //It's running outside of the container, but I don't know why.
-    margin-left: auto;
-    color: $copyright;
-    text-align: right;
-    span {
-      display: flex;
-      justify-content: flex-end;
-    }
+}
+
+#copyright { //They didn't nest this.
+  margin-left: auto;
+  color: $light-green;
+  text-align: right;
+  span {
+    display: flex;
+    justify-content: flex-end;
   }
 }
+
 
 @media only screen and (max-width: 480px){
   #intro{
@@ -170,7 +246,7 @@ $copyright: #00E2AC;
 
   .left-col {
     text-align: left;
-    & h2{
+    h2{
       font-size: 42px;
       line-height: 40px;
     }
@@ -191,7 +267,7 @@ $copyright: #00E2AC;
     }
   .col-md-4{
     width: 100%;
-    .col-md-4 img{
+    img{
       width: 100%;
       height: auto;
       max-width: 992px;
