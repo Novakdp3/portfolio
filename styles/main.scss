@@ -173,7 +173,7 @@ $dark-grey: #999999;
 
 .col-md-4{ //they didn't nest this. Did that make a difference on the photo border?
   overflow: hidden;
-  padding-top: 0 5px 10px 5px;
+  padding: 0 5px 10px 5px;
   img{
     height: 100%;
     max-width: 390px;
